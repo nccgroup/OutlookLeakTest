@@ -1,0 +1,7 @@
+<$scheme$>:<$target$>/
+<$scheme$>:/<$target$>/
+<$scheme$>:\<$target$>/
+<$scheme$>://<$target$>/
+<$scheme$>:\\<$target$>/
+<$scheme$>:/\<$target$>/
+<$scheme$>:\/<$target$>/

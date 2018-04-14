@@ -1,0 +1,505 @@
+<!DOCTYPE html SYSTEM "<$payload$>/doctype">
+<html xmlns="http://www.w3.org/1999/xhtml" manifest="<$payload$>/html-manifest">
+<!--
+Based on
+https://github.com/cure53/HTTPLeaks
+https://stackoverflow.com/questions/2725156/complete-list-of-html-tag-attributes-which-have-a-url-value
+
+// Improved by Soroush Dalili (@irsdl)
+// Released under AGPL see LICENSE for more information
+-->
+
+<head profile="<$payload$>/head-profile">
+
+    <!--
+    %Base (check manually)
+    -->
+    <base href="<$payload$>/base-href/1" />
+
+    <!--
+    %MSIE Imports
+    -->
+    <?IMPORT namespace="myNS" implementation="
+    <$payload$>
+        /import-implementation" ?>
+        <IMPORT namespace="myNS" implementation="<$payload$>/import-implementation-2" />
+
+        <!--
+        %Redirects
+        -->
+        <meta http-equiv="refresh" content="10; url=<$payload$>/meta-refresh" />
+
+        <!--
+        %CSP
+        -->
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self'; report-uri <$payload$>/meta-csp-report-uri" />
+        <meta http-equiv="Content-Security-Policy-Report-Only" content="script-src 'self'; report-uri <$payload$>/meta-csp-report-uri-2" />
+
+        <!--
+        %Reading View
+        -->
+        <meta name="copyright" content="<img src='<$payload$>/meta-name-copyright-reading-view'>" />
+        <meta name="displaydate" content="<img src='<$payload$>/meta-name-displaydate-reading-view'>" />
+        <meta property="og:site_name" content="<img src='<$payload$>/meta-property-reading-view'>" />
+
+        <!--
+        %AppLink Web Fallback
+        -->
+        <meta property="al:web:url" content="<$payload$>/meta-property-al-web-url" />
+
+        <!--
+        %Pinned Websites
+        -->
+        <meta name="msapplication-config" content="<$payload$>/meta-name-msa-config" />
+        <meta name="msapplication-badge" content="frequency=30; polling-uri=<$payload$>/meta-name-msa-badge" />
+        <meta name="msapplication-notification" content="frequency=60;polling-uri=<$payload$>/meta-name-msa-notification" />
+        <meta name="msapplication-square150x150logo" content="<$payload$>/meta-name-msa-logo-1" />
+        <meta name="msapplication-square310x310logo" content="<$payload$>/meta-name-msa-logo-2" />
+        <meta name="msapplication-square70x70logo" content="<$payload$>/meta-name-msa-logo-3" />
+        <meta name="msapplication-wide310x150logo" content="<$payload$>/meta-name-msa-logo-4" />
+        <meta name="msapplication-task" content="name=Leak;action-uri=<$payload$>/meta-name-msa-task;icon-uri=<$payload$>/meta-name-msa-task-icon" />
+        <meta name="msapplication-TileImage" content="<$payload$>/meta-name-msa-tile-image" />
+
+        <!--
+        %Links
+        -->
+        <link rel="stylesheet" href="<$payload$>/link-stylesheet" />
+        <link rel="icon" href="<$payload$>/link-icon" />
+        <link rel="canonical" href="<$payload$>/link-canonical" />
+        <link rel="shortcut icon" href="<$payload$>/link-shortcut-icon" />
+        <link rel="import" href="<$payload$>/link-import" />
+        <link rel="dns-prefetch" href="<$payload$>/link-dns-prefetch" />
+        <link rel="preconnect" href="<$payload$>/link-preconnect" />
+        <link rel="prefetch" href="<$payload$>/link-prefetch" />
+        <link rel="preload" href="<$payload$>/link-preload" />
+        <link rel="prerender" href="<$payload$>/link-prerender" />
+
+        <link rel="preload" as="font" href="<$payload$>/link-preload-as-font" />
+        <link rel="preload" as="image" href="<$payload$>/link-preload-as-image" />
+        <link rel="preload" as="style" href="<$payload$>/link-preload-as-style" />
+        <link rel="preload" as="script" href="<$payload$>/link-preload-as-script" />
+
+        <link rel="search" href="<$payload$>/link-search" />
+        <!--
+        Note that OpenSearch description URLs are ignored in Chrome if this file isn't placed in the webroot.
+        Also, in Chrome, you won't see the request in the developer tools because the request happens in the privileged browser process.
+        Use a network sniffer to detect it.
+        -->
+
+        <link rel="alternate" href="<$payload$>/link-alternate" />
+        <link rel="alternate" type="application/atom+xml" href="<$payload$>/link-alternate-atom" />
+        <link rel="alternate stylesheet" href="<$payload$>/link-alternate-stylesheet" />
+        <link rel="amphtml" href="<$payload$>/link-amphtml" />
+        <link rel="appendix" href="<$payload$>/link-appendix" />
+        <link rel="apple-touch-icon-precomposed" href="<$payload$>/link-apple-touch-icon-precomposed" />
+        <link rel="apple-touch-icon" href="<$payload$>/link-apple-touch-icon" />
+        <link rel="apple-touch-startup-image" href="<$payload$>/link-apple-touch-startup-image" />
+        <link rel="archives" href="<$payload$>/link-archives" />
+        <link rel="author" href="<$payload$>/link-author" />
+        <link rel="bookmark" href="<$payload$>/link-bookmark" />
+        <link rel="canonical" href="<$payload$>/link-canonical" />
+        <link rel="chapter" href="<$payload$>/link-chapter" />
+        <link rel="chrome-webstore-item" href="<$payload$>/link-chrome-webstore-item" />
+        <link rel="contents" href="<$payload$>/link-contents" />
+        <link rel="copyright" href="<$payload$>/link-copyright" />
+        <link rel="entry-content" href="<$payload$>/link-entry-content" />
+        <link rel="external" href="<$payload$>/link-external" />
+        <link rel="feedurl" href="<$payload$>/link-feedurl" />
+        <link rel="first" href="<$payload$>/link-first" />
+        <link rel="glossary" href="<$payload$>/link-glossary" />
+        <link rel="help" href="<$payload$>/link-help" />
+        <link rel="index" href="<$payload$>/link-index" />
+        <link rel="last" href="<$payload$>/link-last" />
+        <link rel="manifest" href="<$payload$>/link-manifest" />
+        <link rel="mask-icon" href="<$payload$>/link-mask-icon" color="red" />
+        <link rel="next" href="<$payload$>/link-next" />
+        <link rel="offline" href="<$payload$>/link-offline" />
+        <link rel="P3Pv1" href="<$payload$>/link-P3Pv1" />
+        <link rel="pingback" href="<$payload$>/link-pingback" />
+        <link rel="prev" href="<$payload$>/link-prev" />
+        <link rel="publisher" href="<$payload$>/link-publisher" />
+        <link rel="search" type="application/opensearchdescription+xml" href="<$payload$>/link-search-2" title="Search" />
+        <link rel="sidebar" href="<$payload$>/link-sidebar" />
+        <link rel="start" href="<$payload$>/link-start" />
+        <link rel="section" href="<$payload$>/link-section" />
+        <link rel="subsection" href="<$payload$>/link-subsection" />
+        <link rel="subresource" href="<$payload$>/link-subresource" />
+        <link rel="tag" href="<$payload$>/link-tag" />
+        <link rel="up" href="<$payload$>/link-up" />
+    </$payload$>
+</head>
+
+<!--
+%Body Background
+-->
+<body background="<$payload$>/body-background">
+
+    <!--
+    %Links & Maps
+    -->
+    <a ping="<$payload$>/a-ping" href="#">You have to click me</a>
+    <img src="data:;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw" width="150" height="150" usemap="#map" />
+    <map name="map1">
+        <area ping="<$payload$>/area-ping" shape="rect" coords="0,0,150,150" href="#" />
+    </map>
+    <map name="map2">
+        <area href="<$payload$>/area-href" shape="rect" coords="0,0,150,150" href="#" />
+    </map>
+    <!--
+    The ping attribute allows to send a HTTP request to an external IP or domain,
+    even if the link's HREF points somewhere else. The link has to be clicked though
+
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#attr-ping
+    -->
+    <!--
+    %Table Background
+    -->
+    <table background="<$payload$>/table-background">
+        <tr>
+            <td background="<$payload$>/td-background"></td>
+        </tr>
+    </table>
+
+    <!--
+    %Images
+    -->
+    <img />
+    <img src="<$payload$>/img-src" />
+    <img dynsrc="<$payload$>/img-dynsrc" />
+    <img lowsrc="<$payload$>/img-lowsrc" />
+    <img src="data:image/svg+xml,<svg%20xmlns='%68ttp:%2f/www.w3.org/2000/svg'%20xmlns:xlink='%68ttp:%2f/www.w3.org/1999/xlink'><image%20xlink:hr%65f='<$payload$>/svg-via-data'></image></svg>" />
+    <img usemap="<$payload$>/img-usemap" />
+
+    <image src="<$payload$>/image-src">
+        <image href="<$payload$>/image-href">
+
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <image href="<$payload$>/svg-image-href">
+                    <image xlink:href="<$payload$>/svg-image-xlink-href">
+                    </image>
+                </image>
+            </svg>
+
+            <picture>
+                <source srcset="<$payload$>/picture-source-srcset1" />
+                <source srcset="<$payload$>/picture-source-srcset2 srcset2" />
+            </picture>
+            <picture>
+                <img srcset="<$payload$>/picture-img-srcset" />
+            </picture>
+            <img srcset=",,,,,<$payload$>/img-srcset1" />
+            <img srcset="<$payload$>/img-srcset2 img-srcset2" />
+
+            <img src="#" longdesc="<$payload$>/img-longdesc" />
+            <!-- longdesc works on Firefox but requires right-click, "View Description" -->
+            <!--
+            %Forms
+            -->
+            <form action="<$payload$>/form-action"><input type="submit" /></form>
+            <form id="test0"></form><button form="test" formaction="<$payload$>/button-formaction">CLICKME</button>
+            <input type="image" src="<$payload$>/input-src" name="test1" value="test" />
+            <input type="image" usemap="<$payload$>/input-usemap" name="test2" value="test" />
+            <isindex src="<$payload$>/isindex-src" type="image" />
+            <isindex action="<$payload$>/isindex-action" /></isindex>
+            <form id="test2"></form><isindex type="submit" formaction="<$payload$>/isindex-formaction" form="test2" /></isindex>
+            <command type="command" label="Submit" icon="<$payload$>/command-src" />Command Submit</command>
+            <!--
+            %Media
+            -->
+            <bgsound src="<$payload$>/bgsound-src"></bgsound>
+            <video src="<$payload$>/video-src">
+                <track kind="subtitles" label="English subtitles" src="<$payload$>/track-src" srclang="en" default=default /></track>
+            </video>
+            <video controls=controls>
+                <source src="<$payload$>/video-source-src" type="video/mp4" />
+            </video>
+            <audio controls=controls>
+                <source src="<$payload$>/audio-source-src" type="video/mp4" />
+            </audio>
+            <video poster="<$payload$>/video-poster" src="<$payload$>/video-poster-2"></video>
+
+            <!--
+            %Object & Embed
+            -->
+            <object data="<$payload$>/object-data"></object>
+            <object type="text/x-scriptlet" data="<$payload$>/object-data-x-scriptlet"></object>
+            <object movie="<$payload$>/object-movie" type="application/x-shockwave-flash"></object>
+            <object movie="<$payload$>/object-movie">
+                <param name="type" value="application/x-shockwave-flash" /></param>
+            </object>
+            <object codebase="<$payload$>/object-codebase"></object>
+            <embed src="<$payload$>/embed-src" /></embed>
+            <embed code="<$payload$>/embed-code" /></embed>
+            <object classid="clsid:333C7BC4-460F-11D0-BC04-0080C7055A83">
+                <param name="DataURL" value="<$payload$>/object-param-dataurl" />
+            </object>
+
+            <object classid="<$payload$>/object-classid"></object>
+
+            <object usemap="<$payload$>/object-usemap"></object>
+
+            <object archive="<$payload$>/object-archive0"></object>
+            <object archive="test <$payload$>/object-archive1"></object>
+            <!--
+            %Script
+            -->
+            <script src="<$payload$>/script-src">
+            </script>
+            <svg><script href="<$payload$>/svg-script-href"></script></svg>
+            <svg><script xlink:href="<$payload$>/svg-script-xlink-href"></script></svg>
+
+            <!--
+            %Frames
+            -->
+            <iframe src="<$payload$>/iframe-src"></iframe>
+            <iframe src="data:image/svg+xml,<svg%20xmlns='%68ttp:%2f/www.w3.org/2000/svg'%20xmlns:xlink='%68ttp:%2f/www.w3.org/1999/xlink'><image%20xlink:hr%65f='<$payload$>/svg-via-data'></image></svg>"></iframe>
+            <iframe srcdoc="<img src=<$payload$>/iframe-srcdoc-img-src>"></iframe>
+            <frameset>
+                <frame src="<$payload$>/frame-src"></frame>
+                <frame longdesc="<$payload$>/frame-longdesc"></frame>
+            </frameset>
+            <iframe src="view-source:<$payload$>/iframe-src-viewsource"></iframe>
+            <iframe longdesc="<$payload$>/iframe-longdesc"></iframe>
+
+            <!--
+            %Menu
+            -->
+            <p contextmenu="a">Right Click</p>
+            <menu type="context" id="a">
+                <menuitem label="a" icon="<$payload$>/menuitem-icon"></menuitem>
+            </menu>
+
+            <!--
+            %CSS
+            -->
+            <style>
+                @import '<$payload$>/css-import-string';
+                @import url(<$payload$>/css-import-url);
+            </style>
+            <style>
+                a:after {content: url(<$payload$>/css-after-content)}
+                a::after {content: url(<$payload$>/css-after-content-2)}
+                a:before {content: url(<$payload$>/css-before-content)}
+                a::before {content: url(<$payload$>/css-before-content-2)}
+            </style>
+            <a href="#">ABC</a>
+            <style>
+                big {
+                list-style: url(<$payload$>/css-list-style);
+                list-style-image: url(<$payload$>/css-list-style-image);
+                background: url(<$payload$>/css-background);
+                background-image: url(<$payload$>/css-background-image);
+                border-image: url(<$payload$>/css-border-image);
+                -moz-border-image: url(<$payload$>/css--moz-background-image-alias);
+                -webkit-border-image: url(<$payload$>/css--webkit-background-image-alias);
+                border-image-source: url(<$payload$>/css-border-image-source);
+                shape-outside: url(<$payload$>/css-shape-outside);
+                cursor: url(<$payload$>/css-cursor), auto;
+                }
+            </style>
+            <big>DEF</big>
+            <style>
+                /* Basic font-face */
+                @font-face {
+                font-family: leak;
+                src: url(<$payload$>/css-font-face-src);
+                }
+
+                /*
+                * Cross-browser font-face
+                * IE6-8 will use the EOT source, modern browsers will use WOFF(2) and fallback to TTF in case of error
+                * More info:
+                * http://www.paulirish.com/2009/bulletproof-font-face-implementation-syntax/
+                * http://caniuse.com/#search=eot
+                * http://caniuse.com/#search=woff2
+                * http://caniuse.com/#search=woff
+                * http://caniuse.com/#search=ttf
+                */
+                @font-face {
+                font-family: 'leak';
+                src: url('<$payload$>/css-font-face-src-eot') format('eot'), url('<$payload$>/css-font-face-src-woff') format('woff'), url('<$payload$>/css-font-face-src-ttf') format('truetype');
+                }
+
+                big {
+                font-family: leak;
+                }
+            </style>
+            <big>GHI</big>
+            <svg>
+                <style>
+                    circle {
+                    fill: url(<$payload$>/svg-css-fill#foo);
+                    mask: url(<$payload$>/svg-css-mask#foo);
+                    filter: url(<$payload$>/svg-css-filter#foo);
+                    clip-path: url(<$payload$>/svg-css-clip-path#foo);
+                    }
+                </style>
+                <circle r="40"></circle>
+            </svg>
+            <s foo="<$payload$>/css-attr-notation">JKL</s>
+            <style>
+                s {
+                --leak: url(<$payload$>/css-variables);
+                }
+                s {
+                background: var(--leak);
+                }
+                s::after {
+                content: attr(foo url);
+                }
+                s::before {
+                content: attr(notpresent, url(<$payload$>/css-attr-fallback));
+                }
+            </style>
+            <style>
+                p#p1 {
+                background-image: \75 \72 \6C (<$payload$>/css-escape-url-1);
+                }
+                p#p2 {
+                background-image: \000075\000072\00006C(<$payload$>/css-escape-url-2);
+                }
+            </style>
+            <p id="p1">bla</p>
+            <p id="p2">bla</p>
+
+            <!--
+            %Inline CSS
+            -->
+            <b style="
+               list-style:=list-style url(=url(<$payload$>/inline-css-list-style);
+        list-style-image: url&#40;<$payload$>/inline-css-list-style-image&#41;;
+        background: url&#x28;<$payload$>/inline-css-background&#x29;;
+        background-image: url&lpar;<$payload$>/inline-css-background-image&rpar;;
+        border-image: url(<$payload$>/inline-css-list-style-image);
+        -moz-border-image: url(<$payload$>/inline-css--moz-background-image-alias);
+        -webkit-border-image: url(<$payload$>/inline-css--webkit-background-image-alias);
+        border-image-source: url(<$payload$>/inline-css-border-image-source);
+        shape-outside: url(<$payload$>/inline-css-shape-outside);
+        cursor: url(<$payload$>/inline-css-cursor), auto;
+">MNO</b>
+
+            <svg>
+                <circle style="
+                        fill:=fill url(=url(<$payload$>/svg-inline-css-fill#foo);
+        mask: url(<$payload$>/svg-inline-css-mask#foo);
+        filter: url(<$payload$>/svg-inline-css-filter#foo);
+        clip-path: url(<$payload$>/svg-inline-css-clip-path#foo);
+"></circle>
+            </svg>
+
+            <!--
+            %Exotic Inline CSS
+            -->
+            <div style="background: url() url() url() url() url(<$payload$>/inline-css-multiple-backgrounds);"></div>
+            <div style="behavior: url('<$payload$>/inline-css-behavior');"></div>
+            <div style="-ms-behavior: url('<$payload$>/inline-css-behavior-2');"></div>
+            <div style="background-image: image('<$payload$>/inline-css-image-function')"></div>
+            <div style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='<$payload$>/inline-css-filter-alpha', sizingMethod='scale');"></div>
+            <div style="filter:progid:DXImageTransform.Microsoft.ICMFilter(colorSpace='<$payload$>/inline-css-filter-icm')"></div>
+
+            <!--
+            %Applet
+            -->
+            <applet code="Test1" codebase="<$payload$>/applet-codebase"></applet>
+            <applet code="Test2" archive="<$payload$>/applet-archive0"></applet>
+            <applet code="Test3" archive="test,<$payload$>/applet-archive1"></applet>
+            <applet code="Test4" object="<$payload$>/applet-object"></applet>
+
+            <!--
+            %SVG
+            -->
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <linearGradient id="Gradient">
+                        <stop offset="0" stop-color="white" stop-opacity="0" />
+                        <stop offset="1" stop-color="white" stop-opacity="1" />
+                    </linearGradient>
+                    <mask id="Mask">
+                        <rect x="0" y="0" width="200" height="200" fill="url(<$payload$>/svg-fill)" />
+                    </mask>
+                </defs>
+                <rect x="0" y="0" width="200" height="200" fill="green" />
+                <rect x="0" y="0" width="200" height="200" fill="red" mask="url(<$payload$>/svg-mask)" />
+            </svg>
+
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <image xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <set attributeName="xlink:href" begin="0s" to="<$payload$>/svg-image-set" />
+                </image>
+            </svg>
+
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <image xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <animate attributeName="xlink:href" begin="0s" from="#" to="<$payload$>/svg-image-animate" />
+                </image>
+            </svg>
+
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <feImage xlink:href="<$payload$>/svg-feimage" />
+            </svg>
+
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <a xlink:href="<$payload$>/svg-a-text/"><text transform="translate(0,20)">CLICKME</text></a>
+            </svg>
+
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <rect cursor="url(<$payload$>/svg-cursor),auto" />
+            </svg>
+
+            <!--
+            %XSLT Stylesheets
+            -->
+            <?xml -stylesheet=-stylesheet type="text/xsl" href="<$payload$>/xslt-stylesheet" ?>
+
+            <!--
+            %Data Islands
+            -->
+            <xml src="<$payload$>/xml-src" id="xml"></xml>
+            <div datasrc="#xml" datafld="$text" dataformatas="html"></div>
+
+            <!--
+            %VML
+            -->
+            <line xmlns="urn:schemas-microsoft-com:vml" style="behavior:url(#default#vml)">
+                <fill style="behavior:url(#default#vml)" src="<$payload$>/vml-line-fill-src" />
+                <stroke style="behavior:url(#default#vml)" src="<$payload$>/vml-line-stroke-src" />
+                <imageData style="behavior:url(#default#vml)" src="<$payload$>/vml-line-imgdata-src" />
+            </line>
+
+            <vmlframe xmlns="urn:schemas-microsoft-com:vml"
+                      style="behavior:url(#default#vml);position:absolute;width:100%;height:100%"
+                      src="<$payload$>/vmlframe-src#xss">
+            </vmlframe>
+
+            <!--
+            %MathML
+            -->
+            <math xlink:href="<$payload$>/mathml-math">CLICKME</math>
+
+            <math><mi xlink:href="<$payload$>/mathml-mi">CLICKME</mi></math>
+
+            <!--
+            %cite attribute
+            -->
+            <blockquote cite="<$payload$>/blockquote-cite">
+                Test blockquote
+            </blockquote>
+
+            <del cite="<$payload$>/del-cite">
+                Test del
+            </del>
+
+            <ins cite="<$payload$>/ins-cite">
+                Test ins
+            </ins>
+
+            <q cite="<$payload$>/q-cite">
+                Test q
+            </q>
+
+        </image>
+
+    </image>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+extensions: designer.cs generated.cs
+extensions: .cs
+// Released as open source by NCC Group Plc - https://www.nccgroup.trust/
+// Developed by Soroush Dalili (@irsdl)
+// Released under AGPL see LICENSE for more information

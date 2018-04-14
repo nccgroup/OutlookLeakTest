@@ -1,0 +1,17 @@
+dict://test1;test2@<$target$>/d:a:a:1
+ed2k://|<$target$>|1|abcdabcdabcdabcdabcdabcdabcdabcd|/
+msnim:add?contact=<$target$>
+maps:q=<$target$>
+ms-excel:ofv|u|<$target$>
+ms-powerpoint:ofe|u|<$target$>
+ms-word:ofe|u|<$target$>
+ms-word:ofv|u|<$target$>
+res://ieframe.dll/<$target$>
+res:\\ieframe.dll/<$target$>
+res:ieframe.dll/<$target$>
+res:\/ieframe.dll/<$target$>
+res:/\ieframe.dll/<$target$>
+res:/ieframe.dll/<$target$>
+res:\ieframe.dll/<$target$>
+skype:test|1234?sendfile?<$target$>
+spotify:search:<$target$>
