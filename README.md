@@ -16,7 +16,9 @@ This file has been generated based on the following sources:
 ## Research and the Tales:
 
 While I was working on an assessment, I received an HTML email in Outlook 2010 that contained an image tag similar to:
+```
 <img src="//example.com/test/image.jpg" >
+```
 
 I could see that Outlook was searching for something after opening that email and it took longer than usual to fully open it. I quickly realised that Outlook actually used the URL as “\\example.com\test\image.jpg” and sent “example.com” a SMB request.
 
