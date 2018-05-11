@@ -33,8 +33,7 @@ In order to reduce complications, Wireshark and Process Monitor of Sysinternals 
 
 Outlook sent external SMB/WebDAV requests upon opening a crafted HTML email. This could be abused to hijack a victim’s SMB hash or to determine if the recipient had viewed a message. 
 This issue was exploited using Outlook default settings that blocked loading external resources such as image files.
-These requests were sent immediately after opening an email. When SMB port was blocked, a WebDAV request on port 80 was sent. F
-or more details and the fix, please refer to https://www.nccgroup.trust/uk/our-research/
+These requests were sent immediately after opening an email. When SMB port was blocked, a WebDAV request on port 80 was sent. For more details and the fix, please refer to https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/may/smb-hash-hijacking-and-user-tracking-in-ms-outlook/
 
 ### Identified payloads:
 
