@@ -1,8 +1,13 @@
 # The Outlook HTML Leak Test Project!
 
+## Blog post:
+
+https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/may/smb-hash-hijacking-and-user-tracking-in-ms-outlook/
+
 ## What's in "./Schemes-List.xlsx"?
 
-List of URI schemes that might work in Windows. These schemes/protocols can be useful in similar research to find new vulnerabilities or to bypass current protections.
+List of URI schemes that might work in Windows. These schemes/protocols can be useful in similar research to find new vulnerabilities or to bypass current protections. Other products might be affected similarly but it has not been researched here.
+
 It is interesting that opening this file using MS Office takes longer than usual that may suggest Excel is doing something on some of them. This is a great sign to find bugs/features!
 
 ## What's in "./OutlookMailApp/OutlookMailApp/resources/template.html"?
